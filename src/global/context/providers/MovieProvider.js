@@ -4,15 +4,15 @@ import PropTypes from 'prop-types';
 const MovieContext = createContext();
 
 const initialState = {
-  test: 0,
+  nominees: ['test'],
 };
 
-const localState = JSON.parse(localStorage.getItem('cart-items'));
+const localState = JSON.parse(localStorage.getItem('nominees'));
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case 'SET_TEST':
-      return { ...state, test: action.payload.test };
+    case 'SET_NOMINEES':
+      return { ...state, nominees: action.payload.nominees };
     default:
       return null;
   }

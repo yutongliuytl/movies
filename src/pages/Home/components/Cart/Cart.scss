@@ -1,0 +1,33 @@
+.cart-wrapper {
+  // position: absolute;
+  position: relative;
+  width: 100vw;
+  height: 200px;
+  // top: 10vh;
+  margin-top: 10vh;
+  // overflow-x: scroll;
+}
+
+.progress-wrapper {
+  position: absolute;
+  width: 100px;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+}
+
+.containers-wrapper {
+  position: absolute;
+  overflow-x: scroll;
+  height: 250px;
+  left: 200px;
+}
+
+.cart-empty-container {
+  float: left;
+  width: 150px;
+  height: 200px;
+  border-radius: 12px;
+  margin-left: 50px;
+  margin-bottom: 25px;
+}
