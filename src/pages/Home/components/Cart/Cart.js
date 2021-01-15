@@ -6,22 +6,47 @@ import './Cart.scss';
 
 const Cart = () => {
   const globalContext = useGlobalContext();
-  const [movieState] = globalContext.movie;
+  const [movieState, movieDispatch] = globalContext.movie;
   const { nominees } = movieState;
 
-  const indexes = [0, 1, 2, 3, 4];
+  const removePoster = (event) => {
+    const newNoms = nominees.filter(
+      (nominee) => event.target.alt !== nominee.title,
+    );
+    movieDispatch({
+      type: 'SET_NOMINEES',
+      payload: {
+        nominees: newNoms,
+      },
+    });
+  };
 
-  console.log('gucci');
+  const indexes = [0, 1, 2, 3, 4];
   return (
-    <div className="cart-wrapper">
-      <div className="progress-wrapper">
-        <Progress value={nominees.length} />
-      </div>
-      <div className="containers-wrapper">
-        {indexes.map(() => (
-          <Paper className="cart-empty-container" />
-          // <div  />
-        ))}
+    <div>
+      <h2 className="nomination-text">Your nominations</h2>
+      <div className="cart-wrapper">
+        <div className="progress-wrapper">
+          {nominees && <Progress value={nominees.length} />}
+        </div>
+        <div className="containers-wrapper">
+          {indexes.map((ind) =>
+            ind < nominees.length ? (
+              <img
+                className="cart-poster-container"
+                src={nominees[ind].src}
+                alt={nominees[ind].title}
+                key={ind}
+                onClick={removePoster}
+                onKeyDown={removePoster}
+                role="presentation"
+                tabIndex={-1}
+              />
+            ) : (
+              <Paper className="cart-poster-container" key={ind} />
+            ),
+          )}
+        </div>
       </div>
     </div>
   );

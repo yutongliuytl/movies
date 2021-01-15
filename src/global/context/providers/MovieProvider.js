@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const MovieContext = createContext();
 
 const initialState = {
-  nominees: ['test'],
+  nominees: [],
 };
 
 const localState = JSON.parse(localStorage.getItem('nominees'));
@@ -22,7 +22,7 @@ export const MovieContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, localState || initialState);
 
   useEffect(() => {
-    localStorage.setItem('cart-items', JSON.stringify(state));
+    localStorage.setItem('nominees', JSON.stringify(state));
   }, [state]);
 
   return (

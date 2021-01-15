@@ -1,11 +1,8 @@
 .cart-wrapper {
-  // position: absolute;
   position: relative;
   width: 100vw;
   height: 200px;
-  // top: 10vh;
   margin-top: 10vh;
-  // overflow-x: scroll;
 }
 
 .progress-wrapper {
@@ -23,11 +20,21 @@
   left: 200px;
 }
 
-.cart-empty-container {
+.cart-poster-container {
   float: left;
   width: 150px;
   height: 200px;
   border-radius: 12px;
   margin-left: 50px;
   margin-bottom: 25px;
+  cursor: pointer;
+}
+
+.cart-poster-container:hover {
+  opacity: 50%;
+}
+
+.nomination-text{
+  margin-left: 35px;
+  text-align: left;
 }
