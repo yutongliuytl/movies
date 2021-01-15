@@ -1,6 +1,7 @@
 import React from 'react';
 import { useGlobalContext } from 'global/context';
 import Paper from '@material-ui/core/Paper';
+// import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import Progress from '../Progress/Progress';
 import './Cart.scss';
 
@@ -20,14 +21,15 @@ const Cart = () => {
       },
     });
   };
-
   const indexes = [0, 1, 2, 3, 4];
   return (
     <div>
       <h2 className="nomination-text">Your nominations</h2>
       <div className="cart-wrapper">
         <div className="progress-wrapper">
-          {nominees && <Progress value={nominees.length} />}
+          {nominees && (
+            <Progress value={nominees.length} done={nominees.length === 5} />
+          )}
         </div>
         <div className="containers-wrapper">
           {indexes.map((ind) =>

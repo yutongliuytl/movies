@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useGlobalContext } from 'global/context';
 import './Poster.scss';
 
-const Poster = ({ poster, title }) => {
+const Poster = ({ poster, title, year }) => {
   const globalContext = useGlobalContext();
   const [movieState, movieDispatch] = globalContext.movie;
   const { nominees } = movieState;
@@ -38,6 +38,10 @@ const Poster = ({ poster, title }) => {
       tabIndex={0}
     >
       <img className="search-poster-wrapper__image" src={poster} alt={title} />
+      <div>
+        <b>{title}</b>
+      </div>
+      <div>{year}</div>
     </div>
   );
 };
@@ -45,6 +49,7 @@ const Poster = ({ poster, title }) => {
 Poster.propTypes = {
   poster: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  year: PropTypes.number.isRequired,
 };
 
 export default Poster;

@@ -43,11 +43,10 @@
   position: absolute;
   grid-template-columns: repeat(auto-fit, 200px);
   grid-auto-rows: 300px;
-  grid-template-rows: 300px;
+  grid-template-rows: 350px;
   grid-gap: 5rem;
   justify-content: space-around;
   align-content: space-around;
-  
   width: 80vw;
   padding: 0;
 }

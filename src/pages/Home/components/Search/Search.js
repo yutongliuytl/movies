@@ -43,6 +43,7 @@ const Search = () => {
                 <Poster
                   poster={movie.Poster}
                   title={movie.Title}
+                  year={movie.Year}
                   key={movie.Title}
                 />
               ))}
