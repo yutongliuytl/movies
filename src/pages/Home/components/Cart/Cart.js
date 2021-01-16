@@ -36,7 +36,7 @@ const Cart = () => {
             ind < nominees.length ? (
               <Tooltip title="Remove" aria-label="Remove">
                 <img
-                  className="cart-poster-container"
+                  className="cart-poster-container pointer"
                   src={nominees[ind].src}
                   alt={nominees[ind].title}
                   key={ind}
