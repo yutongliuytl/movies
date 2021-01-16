@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import Paper from '@material-ui/core/Paper';
+
 import getMovieSearch from 'utils/movieQueries';
 import Poster from '../Poster/Poster';
 import './Search.scss';

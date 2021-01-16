@@ -1,7 +1,7 @@
 import React from 'react';
 import { useGlobalContext } from 'global/context';
 import Paper from '@material-ui/core/Paper';
-// import HighlightOffIcon from '@material-ui/icons/HighlightOff';
+import Tooltip from '@material-ui/core/Tooltip';
 import Progress from '../Progress/Progress';
 import './Cart.scss';
 
@@ -34,16 +34,18 @@ const Cart = () => {
         <div className="containers-wrapper">
           {indexes.map((ind) =>
             ind < nominees.length ? (
-              <img
-                className="cart-poster-container"
-                src={nominees[ind].src}
-                alt={nominees[ind].title}
-                key={ind}
-                onClick={removePoster}
-                onKeyDown={removePoster}
-                role="presentation"
-                tabIndex={-1}
-              />
+              <Tooltip title="Remove" aria-label="Remove">
+                <img
+                  className="cart-poster-container"
+                  src={nominees[ind].src}
+                  alt={nominees[ind].title}
+                  key={ind}
+                  onClick={removePoster}
+                  onKeyDown={removePoster}
+                  role="presentation"
+                  tabIndex={-1}
+                />
+              </Tooltip>
             ) : (
               <Paper className="cart-poster-container" key={ind} />
             ),

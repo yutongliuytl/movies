@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Tooltip from '@material-ui/core/Tooltip';
 import { useGlobalContext } from 'global/context';
 import './Poster.scss';
 
@@ -30,19 +31,25 @@ const Poster = ({ poster, title, year }) => {
   };
 
   return (
-    <div
-      className="search-poster-wrapper"
-      onClick={handleChoose}
-      onKeyDown={handleChoose}
-      role="button"
-      tabIndex={0}
-    >
-      <img className="search-poster-wrapper__image" src={poster} alt={title} />
-      <div>
-        <b>{title}</b>
+    <Tooltip title="Nominate" aria-label="Nominate">
+      <div
+        className="search-poster-wrapper"
+        onClick={handleChoose}
+        onKeyDown={handleChoose}
+        role="button"
+        tabIndex={0}
+      >
+        <img
+          className="search-poster-wrapper__image"
+          src={poster}
+          alt={title}
+        />
+        <div>
+          <b>{title}</b>
+        </div>
+        <div>{year}</div>
       </div>
-      <div>{year}</div>
-    </div>
+    </Tooltip>
   );
 };
 
